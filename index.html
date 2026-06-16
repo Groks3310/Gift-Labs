@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OKE RUTH GIFT - Professional Full-Stack Developer specializing in React.js, Node.js backend systems, MongoDB, and Railway deployments.">
+  <title>OKE RUTH GIFT | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfo.css">
+</head>
+<body>
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-mark">groks</div>
+  </div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <section class="intro-screen" id="introScreen">
+    <div class="intro-bg" id="introBg"></div>
+    <div class="intro-particles" id="introParticles"></div>
+    <div class="intro-overlay"></div>
+    <div class="intro-content">
+      <h1>OKE RUTH GIFT</h1>
+      <p>Professional Full-Stack Developer | React.js, Backend, MongoDB, Railway</p>
+      <div class="typing-line"><span id="introTyping"></span><span class="typing-cursor"></span></div>
+      <button class="enter-btn" id="enterBtn">Enter Website</button>
+      <div class="intro-scroll-indicator">Professional Software Engineer Portfolio</div>
+    </div>
+  </section>
+
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle ambient mode">♪</button>
+  <button class="floating-whatsapp" onclick="window.open('https://wa.me/2348167580313','_blank')" aria-label="WhatsApp chat">WA</button>
+
+  <div class="site-shell" id="siteShell">
+    <header class="navbar" id="navbar">
+      <button class="logo-wrap" id="logoBtn" aria-label="Home">
+        <span class="logo-core">groks</span>
+      </button>
+      <nav class="top-nav">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="services">Services</a>
+        <a href="#" data-page="portfolio">Portfolio</a>
+        <a href="#" data-page="gallery">Gallery</a>
+        <a href="#" data-page="contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open sidebar"><span></span><span></span><span></span></button>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <img src="myPix.png" alt="OKE RUTH GIFT" class="side-profile">
+        <h3>OKE RUTH GIFT</h3>
+        <p>Full-Stack Web Developer</p>
+      </div>
+      <nav class="side-links">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="services">Services</a>
+        <a href="#" data-page="portfolio">Portfolio</a>
+        <a href="#" data-page="gallery">Gallery</a>
+        <a href="#" data-page="contact">Contact</a>
+      </nav>
+      <div class="side-contact">
+        <a href="tel:08167580313">08167580313</a>
+        <a href="mailto:okeruthgift@gmail.com">okeruthgift@gmail.com</a>
+        <a href="https://wa.me/2348167580313" target="_blank" rel="noreferrer">WhatsApp Direct</a>
+      </div>
+      <div class="side-social">
+        <a href="https://www.linkedin.com/in/oke-ruth-993987385/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/Groks3310" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <main class="main-content" id="mainContent">
+
+      <!-- ======== HOME ======== -->
+      <div class="page active" id="page-home">
+        <section class="hero-fullbg">
+          <div class="hero-bg-img"></div>
+          <div class="hero-bg-overlay"></div>
+          <div class="hero-inner">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Professional Digital Engineering</span>
+              <h2>Building Elegant Digital Experiences</h2>
+              <p>I am OKE RUTH GIFT, a professional full-stack developer building modern business websites and web apps with React.js, backend APIs, MongoDB data systems, and reliable Railway deployment pipelines.</p>
+              <div class="hero-typing"><span id="heroTyping"></span><span class="typing-cursor"></span></div>
+              <div class="hero-cta">
+                <a href="https://wa.me/2348167580313" target="_blank" rel="noreferrer" class="btn btn-gold">Hire Me</a>
+                <a href="#" data-page="portfolio" class="btn btn-glass page-link">View Portfolio</a>
+              </div>
+            </div>
+            <div class="hero-cards reveal">
+              <article class="glass-card floating-card">
+                <h4>Frontend + Backend Delivery</h4>
+                <p>Complete web solutions from responsive UI to secure APIs and database integration.</p>
+              </article>
+              <article class="glass-card floating-card">
+                <h4>Production Infrastructure</h4>
+                <p>Deployment-ready architecture using Railway, MongoDB, and modern JavaScript tooling.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="reviews-section section">
+          <div class="section-title reveal">
+            <h3>Client Reviews</h3>
+            <p>Words from the businesses and individuals I have served.</p>
+          </div>
+          <div class="reviews-grid">
+            <div class="review-card reveal">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Ruth built our entire company platform from scratch — the React frontend, Node backend, and MongoDB integration. She delivered clean, documented code and launched on schedule. Exceptional work."</p>
+              <div class="review-author">
+                <div class="review-avatar">CK</div>
+                <div><strong>Chukwuemeka K.</strong><span>CEO, Nexbridge Tech Solutions</span></div>
+              </div>
+            </div>
+            <div class="review-card reveal">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"The portfolio site Ruth built for my brand elevated my online presence completely. The animations are smooth, the mobile experience is perfect, and clients keep complimenting it. Highly recommended."</p>
+              <div class="review-author">
+                <div class="review-avatar">AT</div>
+                <div><strong>Adaeze T.</strong><span>Creative Director, StyleHaus Lagos</span></div>
+              </div>
+            </div>
+            <div class="review-card reveal">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"Our booking app had complex requirements — admin panels, notifications, role-based access. Ruth handled all of it professionally. The Railway deployment she set up has been rock-solid ever since."</p>
+              <div class="review-author">
+                <div class="review-avatar">BO</div>
+                <div><strong>Babatunde O.</strong><span>Founder, SwiftBook Nigeria</span></div>
+              </div>
+            </div>
+            <div class="review-card reveal">
+              <div class="review-stars">★★★★☆</div>
+              <p class="review-text">"Fast turnaround, excellent communication, and the final product exceeded my expectations. The REST API she built is well-structured and easy for my team to maintain. Would work with her again."</p>
+              <div class="review-author">
+                <div class="review-avatar">IM</div>
+                <div><strong>Ifeoma M.</strong><span>CTO, DataPulse Africa</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="next-page-wrap">
+          <button class="next-page-btn" data-page="about">
+            <span class="npb-label">Explore About</span>
+            <span class="npb-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="npb-ripple"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ======== ABOUT ======== -->
+      <div class="page" id="page-about">
+        <section class="section about-page">
+          <div class="section-title reveal">
+            <h3>About</h3>
+            <p>Professional profile and engineering focus.</p>
+          </div>
+          <div class="about-bio-row reveal">
+            <div class="about-portrait"><img src="myPix.png" alt="OKE RUTH GIFT"/></div>
+            <div class="about-bio-text">
+              <p>I help startups, brands, and businesses ship reliable digital products with clear architecture and polished user experience. I focus on clean code, maintainable systems, and measurable performance from frontend to backend.</p>
+              <p style="margin-top:1rem;">Available for remote and onsite collaborations worldwide with businesses and creators seeking modern premium web experiences.</p>
+            </div>
+          </div>
+
+          <div class="accordion-section reveal">
+            <h4 class="accordion-group-title">Core Competencies</h4>
+            <div class="accordion" id="skillsAccordion">
+              <div class="accordion-item">
+                <button class="accordion-head active">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                  <span>React.js Frontend Architecture</span><span class="acc-chevron">▾</span>
+                </button>
+                <div class="accordion-body open">
+                  <p>Component-driven UI development with modern React patterns including hooks, context, and state management. Emphasis on reusable design systems, performance optimization, and pixel-perfect responsive layouts that scale across all devices.</p>
+                  <div class="acc-tags"><span>React.js</span><span>JSX</span><span>Hooks</span><span>Tailwind CSS</span><span>Responsive Design</span></div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                  <span>Node.js / Express Backend APIs</span><span class="acc-chevron">▾</span>
+                </button>
+                <div class="accordion-body">
+                  <p>Scalable RESTful and GraphQL API design with Node.js and Express. Authentication, middleware architecture, role-based access control, and robust error handling for production-grade backend systems.</p>
+                  <div class="acc-tags"><span>Node.js</span><span>Express</span><span>REST APIs</span><span>JWT Auth</span><span>Middleware</span></div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+                  <span>MongoDB Data Modeling &amp; Integration</span><span class="acc-chevron">▾</span>
+                </button>
+                <div class="accordion-body">
+                  <p>Structured schema design, optimized aggregation pipelines, and reliable data relationships using MongoDB and Mongoose. Indexing strategies, data validation, and connection pooling for high-performance applications.</p>
+                  <div class="acc-tags"><span>MongoDB</span><span>Mongoose</span><span>Aggregation</span><span>Indexing</span><span>Schema Design</span></div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                  <span>Railway Deployment &amp; Production Delivery</span><span class="acc-chevron">▾</span>
+                </button>
+                <div class="accordion-body">
+                  <p>End-to-end deployment workflows using Railway for continuous delivery. Environment configuration, secrets management, health monitoring, and zero-downtime release pipelines.</p>
+                  <div class="acc-tags"><span>Railway</span><span>CI/CD</span><span>Docker</span><span>Env Config</span><span>Monitoring</span></div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  <span>Responsive Web &amp; UI/UX Design</span><span class="acc-chevron">▾</span>
+                </button>
+                <div class="accordion-body">
+                  <p>Professional layouts crafted for mobile, tablet, desktop, and large screens. Design sensibility grounded in conversion-focused UI patterns, accessibility, and visual storytelling for modern brands.</p>
+                  <div class="acc-tags"><span>CSS3</span><span>Flexbox</span><span>Grid</span><span>UI/UX</span><span>Accessibility</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline reveal">
+            <div class="timeline-item"><span>2022</span> Started delivering frontend projects for business and personal brands.</div>
+            <div class="timeline-item"><span>2023</span> Expanded into full-stack development with backend API implementation.</div>
+            <div class="timeline-item"><span>2024+</span> Built deployment-ready products with React.js, MongoDB, and Railway workflows.</div>
+          </div>
+          <div class="stats">
+            <div class="stat-card reveal"><strong class="counter" data-target="10">0</strong><small>Projects Delivered</small></div>
+            <div class="stat-card reveal"><strong class="counter" data-target="98" data-suffix="%">0</strong><small>Client Satisfaction Rate</small></div>
+            <div class="stat-card reveal"><strong class="counter" data-target="4">0</strong><small>Years Experience</small></div>
+          </div>
+        </section>
+        <div class="next-page-wrap">
+          <button class="next-page-btn" data-page="services">
+            <span class="npb-label">View Services</span>
+            <span class="npb-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="npb-ripple"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ======== SERVICES ======== -->
+      <div class="page" id="page-services">
+        <section class="section">
+          <div class="section-title reveal">
+            <h3>Services</h3>
+            <p>End-to-end digital engineering — from first idea to live, production-ready product.</p>
+          </div>
+          <div class="process-strip reveal">
+            <div class="process-step">
+              <div class="ps-num">01</div>
+              <div class="ps-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+              <strong>Discovery</strong><p>Align on goals, stack, and timelines.</p>
+            </div>
+            <div class="ps-connector"></div>
+            <div class="process-step">
+              <div class="ps-num">02</div>
+              <div class="ps-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+              <strong>Design &amp; Build</strong><p>Iterative dev with regular updates.</p>
+            </div>
+            <div class="ps-connector"></div>
+            <div class="process-step">
+              <div class="ps-num">03</div>
+              <div class="ps-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+              <strong>Test &amp; Review</strong><p>QA checks, feedback, refinements.</p>
+            </div>
+            <div class="ps-connector"></div>
+            <div class="process-step">
+              <div class="ps-num">04</div>
+              <div class="ps-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+              <strong>Deploy &amp; Support</strong><p>Live launch, handover, availability.</p>
+            </div>
+          </div>
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+              <span>01</span><h4>React.js Frontend Development</h4>
+              <p>Component-driven interfaces with hooks, context, and reusable design systems built for performance and scalability.</p>
+              <ul class="sc-perks"><li>Mobile-first responsive layouts</li><li>Pixel-perfect UI implementation</li><li>Optimised Core Web Vitals</li></ul>
+            </article>
+            <article class="service-card reveal">
+              <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+              <span>02</span><h4>Backend API Development</h4>
+              <p>Secure, scalable REST APIs with Node.js and Express — handling auth, business logic, and data workflows for growing products.</p>
+              <ul class="sc-perks"><li>JWT / session authentication</li><li>Role-based access control</li><li>Rate limiting &amp; security middleware</li></ul>
+            </article>
+            <article class="service-card reveal">
+              <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg></div>
+              <span>03</span><h4>MongoDB Database Integration</h4>
+              <p>Structured schema design, optimized queries, and reliable data relationships for high-performance data management.</p>
+              <ul class="sc-perks"><li>Schema design &amp; validation</li><li>Aggregation pipeline optimisation</li><li>Indexing strategies for speed</li></ul>
+            </article>
+            <article class="service-card reveal">
+              <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+              <span>04</span><h4>Railway Deployment Setup</h4>
+              <p>From zero to live — production-ready deployment on Railway with env config, secrets management, and CI/CD pipelines.</p>
+              <ul class="sc-perks"><li>Zero-downtime deployments</li><li>Secrets &amp; environment management</li><li>Health monitoring setup</li></ul>
+            </article>
+            <article class="service-card reveal">
+              <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+              <span>05</span><h4>Responsive Web Design</h4>
+              <p>Professional layouts engineered for mobile, tablet, desktop, and large screens — every breakpoint handled with care.</p>
+              <ul class="sc-perks"><li>Cross-browser compatibility</li><li>Fluid typography &amp; spacing</li><li>Accessibility standards (WCAG)</li></ul>
+            </article>
+            <article class="service-card reveal">
+              <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <span>06</span><h4>Business Portfolio Websites</h4>
+              <p>High-credibility websites built to communicate professional value and convert visitors into paying clients.</p>
+              <ul class="sc-perks"><li>Conversion-focused layout</li><li>SEO-ready structure</li><li>Fast load performance</li></ul>
+            </article>
+          </div>
+          <div class="skills-bars reveal">
+            <h4 class="accordion-group-title" style="margin-bottom:1.5rem;">Technical Proficiency</h4>
+            <div class="skill-bar-item">
+              <div class="sb-label"><span>React.js</span><span class="sb-pct">92%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-width="92"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-label"><span>Node.js / Express</span><span class="sb-pct">88%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-label"><span>MongoDB</span><span class="sb-pct">85%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-label"><span>CSS / Responsive Design</span><span class="sb-pct">95%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="sb-label"><span>Railway Deployment</span><span class="sb-pct">80%</span></div>
+              <div class="sb-track"><div class="sb-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </section>
+        <div class="next-page-wrap">
+          <button class="next-page-btn" data-page="portfolio">
+            <span class="npb-label">See My Portfolio</span>
+            <span class="npb-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="npb-ripple"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ======== PORTFOLIO ======== -->
+      <div class="page" id="page-portfolio">
+        <section class="section">
+          <div class="section-title reveal">
+            <h3>Portfolio</h3>
+            <p>Real projects — live in production and deployed for real users.</p>
+          </div>
+          <div class="portfolio-filters reveal">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="collab">Collaboration</button>
+            <button data-filter="personal">Personal</button>
+          </div>
+          <div class="portfolio-grid" id="portfolioGrid">
+
+            <!-- LULU ARTISTRY -->
+            <article class="project-card reveal" data-category="collab">
+              <div class="pc-visual" style="background:linear-gradient(135deg,#1a0a1e,#2d0f2f,#120814);">
+                <svg viewBox="0 0 260 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" y="20" width="220" height="130" rx="12" fill="rgba(200,120,220,0.06)" stroke="rgba(200,120,220,0.2)" stroke-width="1"/>
+                  <rect x="20" y="20" width="220" height="36" rx="12" fill="rgba(200,120,220,0.1)"/>
+                  <text x="36" y="42" font-family="serif" font-size="13" fill="rgba(220,160,240,0.85)" font-weight="600">Lulu Artistry</text>
+                  <rect x="180" y="29" width="48" height="18" rx="9" fill="rgba(200,120,220,0.2)" stroke="rgba(200,120,220,0.4)" stroke-width="1"/>
+                  <text x="204" y="41" text-anchor="middle" font-size="8" fill="rgba(220,160,240,0.9)" font-weight="700">STORE</text>
+                  <rect x="32" y="68" width="54" height="62" rx="8" fill="rgba(200,120,220,0.08)" stroke="rgba(200,120,220,0.25)" stroke-width="1"/>
+                  <rect x="96" y="68" width="54" height="62" rx="8" fill="rgba(200,120,220,0.12)" stroke="rgba(200,120,220,0.35)" stroke-width="1"/>
+                  <rect x="160" y="68" width="54" height="62" rx="8" fill="rgba(200,120,220,0.08)" stroke="rgba(200,120,220,0.2)" stroke-width="1"/>
+                  <ellipse cx="59" cy="90" rx="16" ry="6" stroke="rgba(220,160,240,0.6)" stroke-width="1.5" fill="none"/>
+                  <path d="M43 90 Q51 80 59 90 Q67 80 75 90" stroke="rgba(220,160,240,0.8)" stroke-width="1.5" fill="none"/>
+                  <text x="59" y="118" text-anchor="middle" font-size="8" fill="rgba(200,120,220,0.7)">Lashes</text>
+                  <rect x="107" y="84" width="10" height="28" rx="5" fill="rgba(220,160,240,0.35)" stroke="rgba(220,160,240,0.5)" stroke-width="1"/>
+                  <rect x="119" y="84" width="10" height="28" rx="5" fill="rgba(220,160,240,0.2)" stroke="rgba(220,160,240,0.4)" stroke-width="1"/>
+                  <text x="123" y="118" text-anchor="middle" font-size="8" fill="rgba(200,120,220,0.7)">Nails</text>
+                  <path d="M172 100 Q187 82 202 100" stroke="rgba(220,160,240,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <text x="187" y="118" text-anchor="middle" font-size="8" fill="rgba(200,120,220,0.7)">Brows</text>
+                  <circle cx="224" cy="50" r="10" fill="rgba(200,120,220,0.15)" stroke="rgba(200,120,220,0.4)" stroke-width="1"/>
+                </svg>
+                <div class="pc-badge">Collaboration</div>
+              </div>
+              <div class="pc-body">
+                <div class="pc-title">Lulu Artistry — Beauty Store</div>
+                <div class="pc-desc">Full e-commerce platform for a premium Nigerian beauty brand. Shop, bookings, admin panel, and Paystack payments — all live in production.</div>
+                <ul class="pc-perks">
+                  <li>Product catalogue with cart &amp; wishlist</li>
+                  <li>Booking &amp; training session system</li>
+                  <li>Admin dashboard with order management</li>
+                  <li>Paystack payment integration</li>
+                </ul>
+                <div class="pc-footer">
+                  <div class="pc-stack"><span>Next.js</span><span>MongoDB</span><span>Paystack</span><span>Railway</span></div>
+                  <div class="pc-links">
+                    <a href="https://www.luluartistry.store" target="_blank" rel="noreferrer" class="pc-btn pc-btn--live">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>Live
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- VENDORLY -->
+            <article class="project-card reveal" data-category="collab">
+              <div class="pc-visual" style="background:linear-gradient(135deg,#071a0f,#0c2a18,#061410);">
+                <svg viewBox="0 0 260 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" y="20" width="220" height="130" rx="12" fill="rgba(50,200,120,0.05)" stroke="rgba(50,200,120,0.18)" stroke-width="1"/>
+                  <rect x="20" y="20" width="220" height="36" rx="12" fill="rgba(50,200,120,0.09)"/>
+                  <text x="36" y="42" font-family="sans-serif" font-size="13" fill="rgba(80,220,140,0.85)" font-weight="700">Vendorly</text>
+                  <circle cx="214" cy="38" r="12" fill="rgba(37,211,102,0.18)" stroke="rgba(37,211,102,0.45)" stroke-width="1"/>
+                  <rect x="32" y="68" width="88" height="72" rx="9" fill="rgba(50,200,120,0.07)" stroke="rgba(50,200,120,0.22)" stroke-width="1"/>
+                  <rect x="40" y="76" width="72" height="30" rx="5" fill="rgba(50,200,120,0.12)"/>
+                  <text x="76" y="95" text-anchor="middle" font-size="9" fill="rgba(80,220,140,0.6)">My Store</text>
+                  <rect x="132" y="68" width="96" height="72" rx="9" fill="rgba(50,200,120,0.06)" stroke="rgba(50,200,120,0.18)" stroke-width="1"/>
+                  <rect x="140" y="78" width="16" height="40" rx="3" fill="rgba(50,200,120,0.15)"/>
+                  <rect x="160" y="88" width="16" height="30" rx="3" fill="rgba(50,200,120,0.25)"/>
+                  <rect x="180" y="70" width="16" height="48" rx="3" fill="rgba(50,200,120,0.35)"/>
+                  <rect x="200" y="82" width="16" height="36" rx="3" fill="rgba(50,200,120,0.2)"/>
+                  <text x="180" y="128" text-anchor="middle" font-size="8" fill="rgba(80,220,140,0.55)">Analytics</text>
+                </svg>
+                <div class="pc-badge">Collaboration</div>
+              </div>
+              <div class="pc-body">
+                <div class="pc-title">Vendorly — WhatsApp Storefront</div>
+                <div class="pc-desc">SaaS platform that turns WhatsApp sellers into professional online stores. 1000+ vendors onboarded.</div>
+                <ul class="pc-perks">
+                  <li>Multi-vendor storefront builder</li>
+                  <li>WhatsApp-native ordering flow</li>
+                  <li>Product management dashboard</li>
+                  <li>Vendor community &amp; analytics</li>
+                </ul>
+                <div class="pc-footer">
+                  <div class="pc-stack"><span>Next.js</span><span>Node.js</span><span>MongoDB</span></div>
+                  <div class="pc-links">
+                    <a href="https://www.shopvendorly.com" target="_blank" rel="noreferrer" class="pc-btn pc-btn--live">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>Live
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- GROKS HOTEL -->
+            <article class="project-card reveal" data-category="personal">
+              <div class="pc-visual" style="background:linear-gradient(135deg,#0d1a2e,#07111f,#101828);">
+                <svg viewBox="0 0 260 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="70" y="50" width="120" height="100" rx="4" fill="rgba(216,181,106,0.07)" stroke="rgba(216,181,106,0.25)" stroke-width="1"/>
+                  <rect x="82" y="62" width="18" height="14" rx="2" fill="rgba(216,181,106,0.2)"/>
+                  <rect x="106" y="62" width="18" height="14" rx="2" fill="rgba(216,181,106,0.15)"/>
+                  <rect x="130" y="62" width="18" height="14" rx="2" fill="rgba(216,181,106,0.25)"/>
+                  <rect x="154" y="62" width="18" height="14" rx="2" fill="rgba(216,181,106,0.1)"/>
+                  <rect x="82" y="84" width="18" height="14" rx="2" fill="rgba(216,181,106,0.15)"/>
+                  <rect x="106" y="84" width="18" height="14" rx="2" fill="rgba(216,181,106,0.3)"/>
+                  <rect x="130" y="84" width="18" height="14" rx="2" fill="rgba(216,181,106,0.12)"/>
+                  <rect x="154" y="84" width="18" height="14" rx="2" fill="rgba(216,181,106,0.22)"/>
+                  <rect x="116" y="128" width="28" height="22" rx="2" fill="rgba(216,181,106,0.15)" stroke="rgba(216,181,106,0.4)" stroke-width="1"/>
+                  <rect x="60" y="44" width="140" height="8" rx="2" fill="rgba(216,181,106,0.18)" stroke="rgba(216,181,106,0.35)" stroke-width="1"/>
+                  <text x="130" y="30" text-anchor="middle" font-family="serif" font-size="11" fill="rgba(216,181,106,0.7)" font-weight="600" letter-spacing="3">GROKS HOTEL</text>
+                  <text x="130" y="43" text-anchor="middle" font-size="8" fill="rgba(216,181,106,0.5)">★ ★ ★ ★ ★</text>
+                </svg>
+                <div class="pc-badge pc-badge--personal">Personal</div>
+              </div>
+              <div class="pc-body">
+                <div class="pc-title">Groks Hotel — Luxury Landing Page</div>
+                <div class="pc-desc">Premium hotel website with elegant UI, room showcase, amenities section, and booking inquiry flow.</div>
+                <ul class="pc-perks">
+                  <li>Animated hero &amp; room gallery</li>
+                  <li>Fully responsive across all devices</li>
+                  <li>Booking inquiry &amp; contact flow</li>
+                </ul>
+                <div class="pc-footer">
+                  <div class="pc-stack"><span>React</span><span>CSS3</span><span>Vercel</span></div>
+                  <div class="pc-links">
+                    <a href="https://groks-hotel.vercel.app" target="_blank" rel="noreferrer" class="pc-btn pc-btn--live">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>Live
+                    </a>
+                    <a href="https://github.com/Groks3310" target="_blank" rel="noreferrer" class="pc-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- EAGLES FARM -->
+            <article class="project-card reveal" data-category="personal">
+              <div class="pc-visual" style="background:linear-gradient(135deg,#0a1a08,#091505,#0d1e0b);">
+                <svg viewBox="0 0 260 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M60 150 L60 80 L130 45 L200 80 L200 150 Z" fill="rgba(80,160,60,0.07)" stroke="rgba(80,180,60,0.2)" stroke-width="1"/>
+                  <path d="M60 80 L130 45 L200 80" stroke="rgba(80,180,60,0.35)" stroke-width="1.5" fill="none"/>
+                  <rect x="108" y="118" width="44" height="32" rx="2" fill="rgba(80,160,60,0.12)" stroke="rgba(80,180,60,0.3)" stroke-width="1"/>
+                  <rect x="72" y="98" width="24" height="20" rx="3" fill="rgba(80,180,60,0.15)" stroke="rgba(80,180,60,0.35)" stroke-width="1"/>
+                  <rect x="164" y="98" width="24" height="20" rx="3" fill="rgba(80,180,60,0.15)" stroke="rgba(80,180,60,0.35)" stroke-width="1"/>
+                  <path d="M118 68 Q130 55 142 68 Q136 62 130 65 Q124 62 118 68Z" fill="rgba(216,181,106,0.5)" stroke="rgba(216,181,106,0.7)" stroke-width="0.5"/>
+                  <rect x="30" y="20" width="200" height="22" rx="6" fill="rgba(80,160,60,0.1)" stroke="rgba(80,180,60,0.2)" stroke-width="1"/>
+                  <rect x="38" y="27" width="28" height="8" rx="3" fill="rgba(80,200,80,0.3)"/>
+                  <rect x="72" y="27" width="20" height="8" rx="3" fill="rgba(80,200,80,0.2)"/>
+                  <text x="196" y="34" text-anchor="end" font-size="8" fill="rgba(80,200,80,0.6)" font-weight="600">ADMIN</text>
+                </svg>
+                <div class="pc-badge pc-badge--personal">Personal</div>
+              </div>
+              <div class="pc-body">
+                <div class="pc-title">Eagles Farm — Management Platform</div>
+                <div class="pc-desc">Full-stack farm management system with admin dashboard, inventory tracking, and data reporting — deployed on Vercel.</div>
+                <ul class="pc-perks">
+                  <li>Admin panel with role-based access</li>
+                  <li>Inventory &amp; livestock tracking</li>
+                  <li>MongoDB data engine &amp; REST API</li>
+                </ul>
+                <div class="pc-footer">
+                  <div class="pc-stack"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Vercel</span></div>
+                  <div class="pc-links">
+                    <a href="https://eagles-farm.vercel.app" target="_blank" rel="noreferrer" class="pc-btn pc-btn--live">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>Live
+                    </a>
+                    <a href="https://github.com/Groks3310/EaglesFarm" target="_blank" rel="noreferrer" class="pc-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- RPS SHOOTER -->
+            <article class="project-card reveal" data-category="personal">
+              <div class="pc-visual" style="background:linear-gradient(135deg,#0d0a20,#100d28,#080618);">
+                <svg viewBox="0 0 260 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="130" cy="90" r="60" fill="rgba(120,80,220,0.06)" stroke="rgba(120,80,220,0.2)" stroke-width="1" stroke-dasharray="4 3"/>
+                  <text x="130" y="96" text-anchor="middle" font-family="sans-serif" font-size="18" fill="rgba(216,181,106,0.7)" font-weight="800" letter-spacing="2">VS</text>
+                  <circle cx="82" cy="90" r="22" fill="rgba(120,80,220,0.15)" stroke="rgba(120,80,220,0.4)" stroke-width="1.5"/>
+                  <text x="82" y="97" text-anchor="middle" font-size="20">✊</text>
+                  <circle cx="178" cy="90" r="22" fill="rgba(216,100,100,0.12)" stroke="rgba(216,100,100,0.35)" stroke-width="1.5"/>
+                  <text x="178" y="97" text-anchor="middle" font-size="20">✌️</text>
+                  <rect x="40" y="22" width="70" height="18" rx="9" fill="rgba(120,80,220,0.15)" stroke="rgba(120,80,220,0.35)" stroke-width="1"/>
+                  <text x="75" y="34" text-anchor="middle" font-size="9" fill="rgba(160,120,255,0.9)" font-weight="700">PLAYER  3</text>
+                  <rect x="150" y="22" width="70" height="18" rx="9" fill="rgba(216,100,100,0.12)" stroke="rgba(216,100,100,0.3)" stroke-width="1"/>
+                  <text x="185" y="34" text-anchor="middle" font-size="9" fill="rgba(255,130,130,0.9)" font-weight="700">CPU  1</text>
+                  <rect x="98" y="140" width="64" height="18" rx="9" fill="rgba(216,181,106,0.15)" stroke="rgba(216,181,106,0.4)" stroke-width="1"/>
+                  <text x="130" y="152" text-anchor="middle" font-size="8" fill="rgba(216,181,106,0.9)" font-weight="700">YOU WIN! 🎉</text>
+                </svg>
+                <div class="pc-badge pc-badge--personal">Personal</div>
+              </div>
+              <div class="pc-body">
+                <div class="pc-title">RPS Shooter — Browser Game</div>
+                <div class="pc-desc">Slick Rock-Paper-Scissors game with score tracking, animations, and CPU opponent AI. Playable instantly in the browser.</div>
+                <ul class="pc-perks">
+                  <li>Animated win/lose/draw states</li>
+                  <li>Score tracking across rounds</li>
+                  <li>Responsive &amp; mobile-playable</li>
+                </ul>
+                <div class="pc-footer">
+                  <div class="pc-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Netlify</span></div>
+                  <div class="pc-links">
+                    <a href="https://groks-rps-shooter.netlify.app" target="_blank" rel="noreferrer" class="pc-btn pc-btn--live">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>Play Live
+                    </a>
+                    <a href="https://github.com/Groks3310" target="_blank" rel="noreferrer" class="pc-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+        <div class="next-page-wrap">
+          <button class="next-page-btn" data-page="gallery">
+            <span class="npb-label">Browse Gallery</span>
+            <span class="npb-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="npb-ripple"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ======== GALLERY ======== -->
+      <div class="page" id="page-gallery">
+        <section class="section">
+          <div class="section-title reveal">
+            <h3>Gallery</h3>
+            <p>A visual showcase of projects — from beauty stores to farm systems.</p>
+          </div>
+          <!-- JS renders all images here from images/ folder -->
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </section>
+        <div class="lightbox" id="lightbox">
+          <button class="lightbox-close" id="lightboxClose">✕</button>
+          <button class="lightbox-prev" id="lightboxPrev">‹</button>
+          <button class="lightbox-next" id="lightboxNext">›</button>
+          <div class="lightbox-img-wrap">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+          </div>
+          <div class="lightbox-dots" id="lightboxDots"></div>
+        </div>
+        <div class="next-page-wrap">
+          <button class="next-page-btn" data-page="contact">
+            <span class="npb-label">Get In Touch</span>
+            <span class="npb-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="npb-ripple"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ======== CONTACT ======== -->
+      <div class="page" id="page-contact">
+        <section class="section">
+          <div class="section-title reveal">
+            <h3>Contact</h3>
+            <p>Start your next premium project.</p>
+          </div>
+          <div class="contact-row">
+            <div class="map-contact reveal">
+              <div class="map-wrap">
+                <iframe src="https://maps.google.com/maps?q=Delta%20State%2C%20Nigeria&t=&z=9&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Map of Delta State, Nigeria"></iframe>
+              </div>
+              <div class="address">
+                <h3>Delta State, Nigeria</h3>
+                <p>Available for remote and onsite collaborations worldwide.</p>
+                <ul>
+                  <li>Phone: 08167580313</li>
+                  <li><a href="https://wa.me/2348167580313" target="_blank" rel="noreferrer">WhatsApp Direct Message</a></li>
+                  <li><a href="https://www.linkedin.com/in/oke-ruth-993987385/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+                  <li><a href="https://github.com/Groks3310" target="_blank" rel="noreferrer">GitHub</a></li>
+                </ul>
+              </div>
+            </div>
+            <form id="contactForm" class="form-card reveal" novalidate>
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="message" placeholder="Tell me about your project" required></textarea>
+              <button type="button" class="btn btn-gold" id="sendMsgBtn">Send Message via WhatsApp</button>
+              <p id="formMessage"></p>
+            </form>
+          </div>
+        </section>
+        <div class="next-page-wrap">
+          <button class="next-page-btn" data-page="home">
+            <span class="npb-label">Back to Home</span>
+            <span class="npb-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg></span>
+            <span class="npb-ripple"></span>
+          </button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    (function() {
+      document.querySelectorAll(".page").forEach(function(p) {
+        p.classList.remove("active");
+        p.style.display = "none";
+      });
+      var home = document.getElementById("page-home");
+      if (home) { home.classList.add("active"); home.style.display = "block"; }
+    })();
+  </script>
+  <script src="portfo.js"></script>
+</body>
+</html>
