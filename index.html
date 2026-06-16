@@ -33,48 +33,52 @@
   <button class="music-toggle" id="musicToggle" aria-label="Toggle ambient mode">♪</button>
   <button class="floating-whatsapp" onclick="window.open('https://wa.me/2348167580313','_blank')" aria-label="WhatsApp chat">WA</button>
 
+ <!-- NAVBAR — now outside site-shell -->
+<header class="navbar" id="navbar">
+  <button class="logo-wrap" id="logoBtn" aria-label="Home">
+    <span class="logo-core">groks</span>
+  </button>
+  <nav class="top-nav">
+    <a href="#" data-page="home">Home</a>
+    <a href="#" data-page="about">About</a>
+    <a href="#" data-page="services">Services</a>
+    <a href="#" data-page="portfolio">Portfolio</a>
+    <a href="#" data-page="gallery">Gallery</a>
+    <a href="#" data-page="contact">Contact</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Open sidebar"><span></span><span></span><span></span></button>
+</header>
+
+<!-- SIDEBAR — now outside site-shell -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <img src="myPix.png" alt="OKE RUTH GIFT" class="side-profile">
+    <h3>OKE RUTH GIFT</h3>
+    <p>Full-Stack Web Developer</p>
+  </div>
+  <nav class="side-links">
+    <a href="#" data-page="home">Home</a>
+    <a href="#" data-page="about">About</a>
+    <a href="#" data-page="services">Services</a>
+    <a href="#" data-page="portfolio">Portfolio</a>
+    <a href="#" data-page="gallery">Gallery</a>
+    <a href="#" data-page="contact">Contact</a>
+  </nav>
+  <div class="side-contact">
+    <a href="tel:08167580313">08167580313</a>
+    <a href="mailto:okeruthgift@gmail.com">okeruthgift@gmail.com</a>
+    <a href="https://wa.me/2348167580313" target="_blank" rel="noreferrer">WhatsApp Direct</a>
+  </div>
+  <div class="side-social">
+    <a href="https://www.linkedin.com/in/oke-ruth-993987385/" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a href="https://github.com/Groks3310" target="_blank" rel="noreferrer">GitHub</a>
+  </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+
   <div class="site-shell" id="siteShell">
-    <header class="navbar" id="navbar">
-      <button class="logo-wrap" id="logoBtn" aria-label="Home">
-        <span class="logo-core">groks</span>
-      </button>
-      <nav class="top-nav">
-        <a href="#" data-page="home">Home</a>
-        <a href="#" data-page="about">About</a>
-        <a href="#" data-page="services">Services</a>
-        <a href="#" data-page="portfolio">Portfolio</a>
-        <a href="#" data-page="gallery">Gallery</a>
-        <a href="#" data-page="contact">Contact</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="Open sidebar"><span></span><span></span><span></span></button>
-    </header>
-
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-head">
-        <img src="myPix.png" alt="OKE RUTH GIFT" class="side-profile">
-        <h3>OKE RUTH GIFT</h3>
-        <p>Full-Stack Web Developer</p>
-      </div>
-      <nav class="side-links">
-        <a href="#" data-page="home">Home</a>
-        <a href="#" data-page="about">About</a>
-        <a href="#" data-page="services">Services</a>
-        <a href="#" data-page="portfolio">Portfolio</a>
-        <a href="#" data-page="gallery">Gallery</a>
-        <a href="#" data-page="contact">Contact</a>
-      </nav>
-      <div class="side-contact">
-        <a href="tel:08167580313">08167580313</a>
-        <a href="mailto:okeruthgift@gmail.com">okeruthgift@gmail.com</a>
-        <a href="https://wa.me/2348167580313" target="_blank" rel="noreferrer">WhatsApp Direct</a>
-      </div>
-      <div class="side-social">
-        <a href="https://www.linkedin.com/in/oke-ruth-993987385/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/Groks3310" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </aside>
-    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
-
+   
     <main class="main-content" id="mainContent">
 
       <!-- ======== HOME ======== -->

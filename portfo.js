@@ -100,9 +100,59 @@ window.addEventListener("scroll", () => {
   navbar.classList.toggle("scrolled", window.scrollY > 60);
 }, { passive: true });
 
-// ===== SIDEBAR =====
-menuBtn.addEventListener("click", () => { sidebar.classList.toggle("open"); sidebarBackdrop.classList.toggle("show"); });
-sidebarBackdrop.addEventListener("click", () => { sidebar.classList.remove("open"); sidebarBackdrop.classList.remove("show"); });
+// ===== SIDEBAR TOGGLE =====
+menuBtn.addEventListener("click", () => {
+  const isOpening = !sidebar.classList.contains("open");
+  sidebar.classList.toggle("open");
+  sidebarBackdrop.classList.toggle("show");
+  if (isOpening) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+});
+
+sidebarBackdrop.addEventListener("click", () => {
+  sidebar.classList.remove("open");
+  sidebarBackdrop.classList.remove("show");
+  document.body.style.overflow = "";
+});
+
+// ===== KEYBOARD SCROLL IN SIDEBAR =====
+// Handles sidebar keyboard scrolling when open.
+// When sidebar is closed, the lightbox keydown handler below takes over for Escape/arrows.
+document.addEventListener("keydown", (e) => {
+  // Skip — let the lightbox handler deal with it
+  if (lightbox && lightbox.classList.contains("open")) return;
+
+  if (!sidebar.classList.contains("open")) return;
+  const scrollKeys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
+  if (!scrollKeys.includes(e.key)) return;
+
+  // Close sidebar on Escape
+  if (e.key === "Escape") {
+    sidebar.classList.remove("open");
+    sidebarBackdrop.classList.remove("show");
+    document.body.style.overflow = "";
+    return;
+  }
+
+  const sidebarEl = sidebar;
+  const atTop = sidebarEl.scrollTop === 0 &&
+    (e.key === "ArrowUp" || e.key === "PageUp" || e.key === "Home");
+  const atBottom = sidebarEl.scrollTop + sidebarEl.clientHeight >= sidebarEl.scrollHeight &&
+    (e.key === "ArrowDown" || e.key === "PageDown" || e.key === "End" || e.key === " ");
+
+  if (!atTop && !atBottom) {
+    e.preventDefault();
+    if (e.key === "ArrowDown" || e.key === " ") sidebarEl.scrollTop += 60;
+    if (e.key === "ArrowUp") sidebarEl.scrollTop -= 60;
+    if (e.key === "PageDown") sidebarEl.scrollTop += 300;
+    if (e.key === "PageUp") sidebarEl.scrollTop -= 300;
+    if (e.key === "Home") sidebarEl.scrollTop = 0;
+    if (e.key === "End") sidebarEl.scrollTop = sidebarEl.scrollHeight;
+  }
+});
 
 // ===== OBSERVERS =====
 const revealObs = new IntersectionObserver((entries) => {
@@ -149,8 +199,6 @@ function showPage(pageId) {
     target.querySelectorAll(".reveal").forEach(el => { el.classList.remove("show"); revealObs.observe(el); });
     target.querySelectorAll(".counter").forEach(c => counterObs.observe(c));
     target.querySelectorAll(".sb-fill").forEach(b => skillBarObs.observe(b));
-
-    // Re-render gallery when navigating to gallery page
     if (pageId === "gallery") renderGallery();
   }, 60);
   document.querySelectorAll(".top-nav a").forEach(a => a.classList.toggle("active", a.dataset.page === pageId));
@@ -162,7 +210,12 @@ function bindNav(sel) {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const pg = link.dataset.page;
-      if (pg) { showPage(pg); sidebar.classList.remove("open"); sidebarBackdrop.classList.remove("show"); }
+      if (pg) {
+        showPage(pg);
+        sidebar.classList.remove("open");
+        sidebarBackdrop.classList.remove("show");
+        document.body.style.overflow = "";
+      }
     });
   });
 }
@@ -170,7 +223,12 @@ bindNav(".top-nav a");
 bindNav(".side-links a");
 bindNav(".page-link");
 bindNav(".next-page-btn");
-document.getElementById("logoBtn").addEventListener("click", () => showPage("home"));
+document.getElementById("logoBtn").addEventListener("click", () => {
+  showPage("home");
+  sidebar.classList.remove("open");
+  sidebarBackdrop.classList.remove("show");
+  document.body.style.overflow = "";
+});
 
 // ===== ENTER =====
 enterBtn.addEventListener("click", () => {
@@ -178,6 +236,10 @@ enterBtn.addEventListener("click", () => {
   setTimeout(() => {
     introScreen.style.display = "none";
     siteShell.classList.add("live");
+    // Reveal navbar now that user has entered
+    navbar.style.opacity = "";
+    navbar.style.visibility = "";
+    navbar.classList.add("live");
     document.body.style.overflow = "";
     window.scrollTo({ top: 0, behavior: "smooth" });
     showPage("home");
@@ -185,7 +247,6 @@ enterBtn.addEventListener("click", () => {
 });
 
 // ===== PORTFOLIO FILTERS =====
-// Use event delegation so it works regardless of when buttons are in the DOM
 document.addEventListener("click", function(e) {
   const btn = e.target.closest(".portfolio-filters button");
   if (!btn) return;
@@ -211,14 +272,11 @@ document.querySelectorAll(".accordion-head").forEach(head => {
 });
 
 // ===== GALLERY RENDER =====
-// Groups: Lulu Artistry (3), Vendorly (3), Groks Hotel (4), Eagles Farm (3), RPS (3)
-// Layout: Featured first image of each group, then rest as smaller tiles
 function renderGallery() {
   const grid = document.getElementById("galleryGrid");
   if (!grid) return;
   grid.innerHTML = "";
 
-  // Define project groups in order
   const groups = [
     { label: "Lulu Artistry",  images: galleryImages.filter(g => g.category === "Lulu Artistry") },
     { label: "Vendorly",       images: galleryImages.filter(g => g.category === "Vendorly") },
@@ -227,37 +285,20 @@ function renderGallery() {
     { label: "RPS Shooter",    images: galleryImages.filter(g => g.category === "RPS Shooter") },
   ];
 
-  // Build layout:
-  // Row 1: Lulu featured (tall) | Lulu 2 | Lulu 3
-  // Row 2: Vendorly featured (tall) | Vendorly 2 | Vendorly 3
-  // Row 3: Hotel 1 | Hotel 2 | Hotel 3 | Hotel 4 (wide pair)
-  // Row 4: Eagles featured (tall) | Eagles 2 | Eagles 3
-  // Row 5: RPS 1 | RPS 2 | RPS 3
-
   const layoutItems = [];
-
-  // Lulu: featured tall + 2 normal
   layoutItems.push({ ...groups[0].images[0], span: "tall" });
   layoutItems.push({ ...groups[0].images[1], span: "" });
   layoutItems.push({ ...groups[0].images[2], span: "" });
-
-  // Vendorly: 3 in a row
   layoutItems.push({ ...groups[1].images[0], span: "" });
   layoutItems.push({ ...groups[1].images[1], span: "" });
   layoutItems.push({ ...groups[1].images[2], span: "" });
-
-  // Groks Hotel: wide + 2 normal
   layoutItems.push({ ...groups[2].images[0], span: "wide" });
   layoutItems.push({ ...groups[2].images[1], span: "" });
   layoutItems.push({ ...groups[2].images[2], span: "" });
   layoutItems.push({ ...groups[2].images[3], span: "" });
-
-  // Eagles Farm: 3 in a row
   layoutItems.push({ ...groups[3].images[0], span: "" });
   layoutItems.push({ ...groups[3].images[1], span: "" });
   layoutItems.push({ ...groups[3].images[2], span: "" });
-
-  // RPS: wide + 2
   layoutItems.push({ ...groups[4].images[0], span: "wide" });
   layoutItems.push({ ...groups[4].images[1], span: "" });
   layoutItems.push({ ...groups[4].images[2], span: "" });
@@ -271,16 +312,13 @@ function renderGallery() {
       <div class="gallery-caption">${item.caption}</div>
     `;
     grid.appendChild(div);
-    // Observe for reveal animation
     revealObs.observe(div);
   });
 
-  // Re-bind click
   grid.querySelectorAll(".gallery-item").forEach((el, idx) => {
     el.addEventListener("click", () => openLightbox(idx));
   });
 
-  // Sync lightbox images array to current layout
   window._currentGalleryLayout = layoutItems;
 }
 
@@ -320,22 +358,17 @@ function updateDots() {
 function openLightbox(idx) {
   const layout = getCurrentLayout();
   currentIdx = idx;
-
   savedScrollY = window.scrollY;
   document.body.style.top = `-${savedScrollY}px`;
   document.body.style.position = "fixed";
   document.body.style.width = "100%";
   document.body.style.overflow = "hidden";
-
   lightboxImg.src = layout[idx].src;
   lightboxImg.alt = layout[idx].caption;
   lightboxCaption.textContent = layout[idx].caption;
-
   lightbox.style.display = "flex";
   lightbox.classList.add("open");
-
   buildDots();
-
   lightboxImg.style.transition = "none";
   lightboxImg.style.opacity = "0";
   lightboxImg.style.transform = "scale(0.88)";
@@ -350,17 +383,14 @@ function closeLightbox() {
   lightboxImg.style.transition = "opacity 0.3s ease, transform 0.3s ease";
   lightboxImg.style.opacity = "0";
   lightboxImg.style.transform = "scale(0.92)";
-
   setTimeout(() => {
     lightbox.classList.remove("open");
     lightbox.style.display = "none";
-
     document.body.style.position = "";
     document.body.style.top = "";
     document.body.style.width = "";
     document.body.style.overflow = "";
     window.scrollTo(0, savedScrollY);
-
     lightboxImg.style.transition = "";
     lightboxImg.style.opacity = "1";
     lightboxImg.style.transform = "scale(1)";
@@ -395,11 +425,10 @@ function slideToImage(idx, direction) {
   }, 290);
 }
 
-// Close lightbox
+// Lightbox controls
 document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
 
-// Prev / Next
 document.getElementById("lightboxPrev").addEventListener("click", e => {
   e.stopPropagation();
   const layout = getCurrentLayout();
@@ -411,7 +440,7 @@ document.getElementById("lightboxNext").addEventListener("click", e => {
   if (!isAnimating) slideToImage((currentIdx + 1) % layout.length, "next");
 });
 
-// Keyboard
+// Lightbox keyboard (Escape, Left, Right arrows)
 document.addEventListener("keydown", e => {
   if (!lightbox.classList.contains("open")) return;
   const layout = getCurrentLayout();
@@ -420,7 +449,7 @@ document.addEventListener("keydown", e => {
   if (e.key === "ArrowRight" && !isAnimating) slideToImage((currentIdx + 1) % layout.length, "next");
 });
 
-// Touch swipe
+// Lightbox touch swipe
 let touchStartX = 0;
 lightbox.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; }, { passive: true });
 lightbox.addEventListener("touchend", e => {
@@ -457,11 +486,17 @@ document.getElementById("musicToggle").addEventListener("click", function () {
 
 // ===== INIT =====
 document.addEventListener("DOMContentLoaded", () => {
+  // Move lightbox to body so fixed positioning works correctly
   const lb = document.getElementById("lightbox");
   if (lb && lb.parentElement !== document.body) {
     document.body.appendChild(lb);
   }
 
+  // Hide navbar until user clicks Enter Website
+  navbar.style.opacity = "0";
+  navbar.style.visibility = "hidden";
+
+  // Show home page on load/refresh
   document.querySelectorAll(".page").forEach(p => { p.classList.remove("active"); p.style.display = "none"; });
   const home = document.getElementById("page-home");
   if (home) {
